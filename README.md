@@ -71,6 +71,10 @@ MultitaskBlur.blur(); // For blur on multitask switch mode
 MultitaskBlur.unBlur(); // For unblur on multitask switch mode
 ```
 
+## Demo
+
+![example-ios](example/Demo.gif)
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

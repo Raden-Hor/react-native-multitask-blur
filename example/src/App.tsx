@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Button title="Blur" onPress={() => MultitaskBlur.blur()} />
-      <Button title="Blur" onPress={() => MultitaskBlur.unBlur()} />
+      <Button title="UnBlur" onPress={() => MultitaskBlur.unBlur()} />
     </View>
   );
 }

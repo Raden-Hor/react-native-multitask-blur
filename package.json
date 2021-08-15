@@ -1,6 +1,6 @@
 {
   "name": "react-native-multitask-blur",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Blur screen on switch mode with specific screen",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
