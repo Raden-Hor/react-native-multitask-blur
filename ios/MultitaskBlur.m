@@ -1,19 +1,18 @@
-#import "MultitaskBlur.h"
+//
+//  RNShare.m
+//  AnimationSample
+//
+//  Created by Raden on 15/August/21.
+//
 
-@implementation MultitaskBlur
+#import <React/RCTBridgeModule.h>
+#import <React/RCTConvert.h>
+#import <React/RCTEventEmitter.h>
 
-RCT_EXPORT_MODULE()
+@interface RCT_EXTERN_MODULE(RNShare, NSObject)
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(nonnull NSNumber*)a withB:(nonnull NSNumber*)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
-{
-  NSNumber *result = @([a floatValue] * [b floatValue]);
+RCT_EXTERN_METHOD(blur)
+RCT_EXTERN_METHOD(unBlur)
 
-  resolve(result);
-}
 
 @end

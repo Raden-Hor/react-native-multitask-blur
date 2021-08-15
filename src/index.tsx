@@ -1,7 +1,8 @@
 import { NativeModules } from 'react-native';
 
 type MultitaskBlurType = {
-  multiply(a: number, b: number): Promise<number>;
+  blur: Function;
+  unBlur: Function;
 };
 
 const { MultitaskBlur } = NativeModules;
