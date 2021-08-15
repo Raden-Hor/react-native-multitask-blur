@@ -73,7 +73,7 @@ MultitaskBlur.unBlur(); // For unblur on multitask switch mode
 
 ## Demo
 
-![example-ios](example/Demo.gif)
+<img src="example/Demo.gif" width="250" height="450"/>
 
 ## Contributing
 
