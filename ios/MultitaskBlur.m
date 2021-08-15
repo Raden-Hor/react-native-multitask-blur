@@ -9,7 +9,7 @@
 #import <React/RCTConvert.h>
 #import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(RNShare, NSObject)
+@interface RCT_EXTERN_MODULE(MultitaskBlur, NSObject)
 
 RCT_EXTERN_METHOD(blur)
 RCT_EXTERN_METHOD(unBlur)

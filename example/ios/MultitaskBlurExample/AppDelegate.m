@@ -30,12 +30,17 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 
 @implementation AppDelegate
-
+NSNumber* blur = 0;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   #ifdef FB_SONARKIT_ENABLED
     InitializeFlipper(application);
   #endif
+  [[NSNotificationCenter defaultCenter] addObserver:self
+          selector:@selector(receiveTestNotification:)
+          name:@"onBlur"
+          object:nil];
+  
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"MultitaskBlurExample"
@@ -58,6 +63,38 @@ static void InitializeFlipper(UIApplication *application) {
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+
+  if ([[notification name] isEqualToString:@"onBlur"]){
+    NSDictionary* userInfo = notification.userInfo;
+    NSNumber* isBlur = (NSNumber*)userInfo[@"isBlur"];
+    blur = isBlur;
+    NSLog (@"%@", isBlur);
+  }
+        
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application{
+  if(blur.intValue == 1){
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    //always fill the view
+    blurEffectView.frame = self.window.bounds;
+    blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    blurEffectView.tag = 181099;
+    [self.window addSubview:blurEffectView];
+  }
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+  [[self.window viewWithTag:181099] removeFromSuperview];
+  
 }
 
 @end
