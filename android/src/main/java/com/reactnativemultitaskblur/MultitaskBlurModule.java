@@ -1,8 +1,10 @@
 package com.reactnativemultitaskblur;
 
+import android.app.Activity;
+import android.view.WindowManager;
+
 import androidx.annotation.NonNull;
 
-import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -13,7 +15,8 @@ public class MultitaskBlurModule extends ReactContextBaseJavaModule {
     public static final String NAME = "MultitaskBlur";
 
     public MultitaskBlurModule(ReactApplicationContext reactContext) {
-        super(reactContext);
+      super(reactContext);
+
     }
 
     @Override
@@ -22,13 +25,29 @@ public class MultitaskBlurModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
-
     // Example method
     // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+    public void blur() {
+      Activity activity = this.getCurrentActivity();
+      activity.runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+          activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        }
+      });
+
     }
 
-    public static native int nativeMultiply(int a, int b);
+  @ReactMethod
+  public void unBlur() {
+    Activity activity = this.getCurrentActivity();
+    activity.runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
+      }
+    });
+
+  }
 }
