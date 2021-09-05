@@ -1,3 +1,5 @@
+
+
 # react-native-multitask-blur
 
 Blur screen on switch mode with specific screen
@@ -59,7 +61,7 @@ npm install react-native-multitask-blur
   ```
 
 #### Android
-* Comming soon, Devloper ot jes android 😂.
+* No need to config 😂.
 ## Usage
 
 ```js
@@ -71,9 +73,12 @@ MultitaskBlur.blur(); // For blur on multitask switch mode
 MultitaskBlur.unBlur(); // For unblur on multitask switch mode
 ```
 
-## Demo
+## Demo iOS
 
 <img src="example/Demo.gif" width="250" height="450"/>
+
+## Demo Android
+https://user-images.githubusercontent.com/47242981/132121868-f31b53bc-8e80-45c6-be0b-a47a3575cd6e.mov
 
 ## Contributing
 
