@@ -78,7 +78,8 @@ MultitaskBlur.unBlur(); // For unblur on multitask switch mode
 <img src="example/Demo.gif" width="250" height="450"/>
 
 ## Demo Android
-<video src='https://user-images.githubusercontent.com/47242981/132121868-f31b53bc-8e80-45c6-be0b-a47a3575cd6e.mov' width="250" height="450"/>
+<img src="https://user-images.githubusercontent.com/47242981/132122250-cd297d50-82c7-4f71-a94b-a8c4ba7d6cd7.gif" width="250" height="450"/>
+
 
 ## Contributing
 
