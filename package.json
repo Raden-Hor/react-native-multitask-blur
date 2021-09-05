@@ -1,6 +1,6 @@
 {
   "name": "react-native-multitask-blur",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Blur screen on switch mode with specific screen",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -34,7 +34,14 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "multitask",
+    "multitask blur",
+    "blur",
+    "background blur",
+    "switch mode",
+    "switch mode blur",
+    "background mode blur"
   ],
   "repository": "https://github.com/Raden-Hor/react-native-multitask-blur",
   "author": "radenhor <radenhor9@gmail.com> (https://github.com/Raden-Hor)",
